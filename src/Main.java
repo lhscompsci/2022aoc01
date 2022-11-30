@@ -16,57 +16,22 @@ public class Main {
 
     }
 
-    private static void partTwo() throws FileNotFoundException {
+    private static void partTwo() throws Throwable {
         Scanner infile = new Scanner(new File("input.dat"));
 
 
 
     }
 
-    private static void partOne() throws FileNotFoundException {
+    private static void partOne() throws Throwable {
         Scanner infile = new Scanner(new File("test.dat"));
 
-        String opens = "([{<";
-        String closes = ")]}>";
-
-        long sum = 0L;
+        long ans = 0L;
 
         while(infile.hasNext()){
-
-            Stack<String> stack = new Stack<>();
-            String s = infile.nextLine();
-            out.println(s);
-            Scanner line = new Scanner(s);
-            line.useDelimiter("");
-            boolean broken = false;
-            while(!broken&& line.hasNext()){
-                String l = line.next();
-                out.print(l);
-                if(opens.contains(l))
-                    stack.push(l);
-                else {
-                    String o = stack.pop();
-                    if(l.equals(")")&&!o.equals("(")){
-                        broken = true;
-                        sum+=3L;
-                    }
-                    else if(l.equals("]")&&!o.equals("[")){
-                        broken = true;
-                        sum += 57L;
-                    }
-                    else if (l.equals("}")&&!o.equals("{")){
-                        broken = true;
-                        sum += 1197L;
-                    }
-                    else if (l.equals(">")&&!o.equals("<")){
-                        broken = true;
-                        sum += 25137L;
-                    }
-                }
-            }
             out.println();
         }
-        out.println(sum);
+        out.println(ans);
 
 
     }
